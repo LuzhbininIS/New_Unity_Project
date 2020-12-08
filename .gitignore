@@ -1,0 +1,12 @@
+# =============== #
+# Unity generated #
+# =============== #
+/New Unity Project/Temp/
+/New Unity Project/obj/
+/New Unity Project/Build/
+/New Unity Project/Llibrary/
+/New Unity Project/Assets/AssetStoreTools*
+/New Unity Project/sysinfo.txt
+*.stackdump
+*.apk
+*.unitypackage
