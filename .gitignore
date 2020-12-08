@@ -10,3 +10,16 @@
 *.stackdump
 *.apk
 *.unitypackage
+
+# ===================================== #
+# Visual Studio generated               #
+# ===================================== #
+/New Unity Project/.vs/
+*.sln
+*.csproj
+*.user
+*.unityproj
+*.tmp
+*.svd
+
+
