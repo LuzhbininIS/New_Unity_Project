@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
 [RequireComponent(typeof(PlayerMotor))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
 	[SerializeField]
 	private float speed = 5f;

@@ -55,3 +55,11 @@ The following packages were added:
   com.unity.learn.iet-framework@0.3.0-preview.5
   com.unity.probuilder@4.2.3
   com.unity.progrids@3.0.3-preview.5
+
+=== Mon Feb  1 10:44:57 2021
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ide.rider from version 1.2.1 to 2.0.7
