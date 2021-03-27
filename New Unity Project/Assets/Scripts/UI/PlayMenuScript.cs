@@ -15,4 +15,9 @@ public class PlayMenuScript : MonoBehaviour
         ApplicationManager.Instance().JoinGame(hostIPAddressInput.text);
     }
 
+    public void HostSteamButtonClicked()
+	{
+        ApplicationManager.Instance().HostSteamGame();
+    }
+
 }
