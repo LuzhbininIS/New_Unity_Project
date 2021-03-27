@@ -5,25 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Chat/SceneChat.unity
-    guid: f7809701ac39c1d429efb0813b1d44c9
   - enabled: 1
-    path: Assets/Scenes/Lobby/SceneLobby.unity
-    guid: 7557d95b9617568439a4d19375dd8f0a
-  m_configObjects: {}
+    path: Assets/Scenes/OpeningScene.unity
+    guid: bfeeaea416365464a8f52b59b7f62245
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: d4d4719e26dc12d47a0ec47bc06a3dfd
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 580d2d1287cf18640a0820ed0cf28ce2,
+      type: 2}
