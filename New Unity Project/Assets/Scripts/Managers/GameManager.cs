@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Mirror;
-using System.Collections;
 
 public class SyncListGameObjects : SyncList<GameObject> { }
 
