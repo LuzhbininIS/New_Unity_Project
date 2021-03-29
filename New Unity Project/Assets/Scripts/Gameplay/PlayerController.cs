@@ -76,7 +76,8 @@ public class PlayerController : NetworkBehaviour
         Transform controlledPawnXform = controlledPawn.transform;
         Pawn controlledPawnRef = controlledPawn.GetComponent<Pawn>();
 
-        controlledPawnRef.isGrounded = Physics.CheckSphere(controlledPawnRef.transform.position, 1.5f, controlledPawnRef.groundCollisionMask);
+        //controlledPawnRef.isGrounded = Physics.CheckSphere(controlledPawnRef.transform.position, 1.5f, controlledPawnRef.groundCollisionMask);
+        controlledPawnRef.isGrounded = Physics.CheckSphere(controlledPawnRef.groundCheck.position, 0.1f, controlledPawnRef.groundCollisionMask);
 
         if (controlledPawnRef.isGrounded) { controlledPawnRef.downwardVelocity = 0; }
         else { controlledPawnRef.downwardVelocity += PlayerControllerSettings.Gravity * Time.deltaTime; }

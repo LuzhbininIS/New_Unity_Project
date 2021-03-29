@@ -68,6 +68,10 @@ public class ApplicationManager : MonoBehaviour
         isHosting = true;
 
         networkManager.StartHost();
+
+        //
+        
+        //
     }
 
     public void JoinGame(string ipAddress)
@@ -81,8 +85,7 @@ public class ApplicationManager : MonoBehaviour
 
     public void HostSteamGame()
     {
-        isPlaying = true;
-        isHosting = true;
+        
 
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, networkManager.maxConnections);
     }
@@ -131,6 +134,9 @@ public class ApplicationManager : MonoBehaviour
             return;
         }
 
+        isPlaying = true;
+        isHosting = true;
+
         networkManager.StartHost();
 
         SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey, SteamUser.GetSteamID().ToString());
@@ -147,6 +153,9 @@ public class ApplicationManager : MonoBehaviour
     private void OnLobbyEntered(LobbyEnter_t callback)
     {
         if (NetworkServer.active) { return; }
+
+        isPlaying = true;
+        isHosting = false;
 
         string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
 
