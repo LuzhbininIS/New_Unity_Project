@@ -3,7 +3,15 @@ guid: 1fc5a19789ce2db43b4aa315c2f60cee
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pawnPrefab: {fileID: 919132149155446097, guid: 12d91801bc3a4924fa778b8a01a1ac3d,
+      type: 3}
+  - overheadCam: {instanceID: 0}
+  - TeamASpawnPoint: {instanceID: 0}
+  - TeamBSpawnPoint: {instanceID: 0}
+  - scoreUIPrefab: {instanceID: 0}
+  - healthPickupPrefab: {instanceID: 0}
+  - ammoPickupPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,7 +1,7 @@
 using Mirror;
 using UnityEngine;
 
-public class PlayerLocomotion : NetworkBehaviour
+public class PlayerLocomotion : MonoBehaviour//NetworkBehaviour
 {
     private Animator animator;
     private NetworkAnimator networkAnimator;
@@ -56,6 +56,7 @@ public class PlayerLocomotion : NetworkBehaviour
     private void Update()
     {
         isGrounded = IsGrounded();
+        //Debug.Log(isGrounded);
 
         // Setting vertical acceleration
         if (isGrounded)
@@ -66,7 +67,6 @@ public class PlayerLocomotion : NetworkBehaviour
         {
             verticalVelocity -= gravity * Time.deltaTime;
         }
-
 
         // Jumping
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
@@ -98,13 +98,18 @@ public class PlayerLocomotion : NetworkBehaviour
         float speedX = Input.GetAxis("Horizontal");
         float speedY = Input.GetAxis("Depth");
         float actualSpeed = (isCrouching) ? crouchingSpeed : runningSpeed;
+        CmdMove(speedX, speedY, actualSpeed);
+    }
 
-        Vector3 movement = new Vector3(speedX, 0, speedY) * Time.deltaTime * actualSpeed;
+    /*[Command]*/ private void CmdMove(float x, float y, float speed)
+    {
+        Vector3 movement = new Vector3(x, 0, y) * Time.deltaTime * speed;
         movement = transform.TransformDirection(movement);
         movement.y = verticalVelocity;
 
-        animator.SetFloat(speedXHash, speedX);
-        animator.SetFloat(speedYHash, speedY);
+        animator.SetFloat(speedXHash, x);
+        animator.SetFloat(speedYHash, y);
+        controller.Move(movement);
         controller.Move(movement);
     }
 }

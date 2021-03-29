@@ -48,7 +48,7 @@ public class GameManager : NetworkBehaviour
         controller.controlledPawn = newPawn;
         newPawn.GetComponent<NetworkIdentity>().AssignClientAuthority(controller.connectionToClient);
         newPawn.GetComponent<Pawn>().teamColour = teamA.Contains(controller.gameObject) ? Color.red : Color.blue;
-        newPawn.GetComponent<Pawn>().PullInCamera();
+        //newPawn.GetComponent<Pawn>().PullInCamera();
         newPawn.GetComponent<Pawn>().playerController = controller;
         newPawn.GetComponent<Pawn>().totalBulletsLeft = 100;
         newPawn.GetComponent<Pawn>().health = 100;

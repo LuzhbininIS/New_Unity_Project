@@ -1,27 +1,30 @@
 ﻿using Mirror;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pawn : NetworkBehaviour
 {
     public PlayerController playerController;
-    public CharacterController CharacterController;
 
-    public GameObject playerStateUIPrefab;
-    GameObject currentPlayerStateUIGameObject;
+    [SerializeField] private GameObject playerStateUIPrefab;
+    private GameObject currentPlayerStateUIGameObject;
 
-    public GameObject teamADeathParticles;
-    public GameObject teamBDeathParticles;
+    [SerializeField] private GameObject teamADeathParticles;
+    [SerializeField] private GameObject teamBDeathParticles;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject mesh;
+    [SerializeField] private GameObject markerMesh;
+    [SerializeField] private GameObject healthBar;
+    [SerializeField] private Slider slider;
 
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] GameObject childCube;
-    public Transform cameraPos;
-    public Transform groundCheck;
-    public LayerMask groundCollisionMask;
+    [SyncVar(hook =nameof(OnColourChange))] public Color teamColor;
 
-    public Transform muzzelTransform;
+    public Transform muzzleTransform;
     public Transform gunTransform;
     public GameObject gunGfx;
     public GameObject muzzelFlashParticleObject;
+    public Material teamAmaterial;
+    public Material teamBmaterial;
 
     [SyncVar] public bool dead;
     [SyncVar(hook =nameof(PlayerHealthUIChanged))] public int health;
@@ -37,45 +40,26 @@ public class Pawn : NetworkBehaviour
     public AnimationCurve reloadEasingFunction;
 
     [SyncVar(hook = nameof(OnColourChange))] public Color teamColour;
-
-    public float downwardVelocity;
-    public bool isGrounded = true;
-    public float xRotation = 0.0f;
+    private void OnColourChange(Color oldColor, Color newColor)
+    {
+        bool isATeam = newColor == Color.red;
+        Material mat = (isATeam) ? teamAmaterial : teamBmaterial;
+        mesh.GetComponentInChildren<SkinnedMeshRenderer>().material = mat;
+        markerMesh.GetComponent<MeshRenderer>().material = mat;
+        healthBar.GetComponent<Image>().color = (isATeam) ? Color.red : Color.blue;
+    }
 
     public AudioSource movementCueAudioSource;
     public AudioSource sfxAudioSource;
     public AudioClip shootSound;
     public AudioClip reloadSound;
 
-    public Texture albedoTeamA;
-    public Texture albedoTeamB;
-
-    public Texture emmisionA;
-    public Texture emissionB;
-
-    void OnColourChange(Color oldColor, Color newColor)
-    {
-        bool isATeam = newColor == Color.red;
-        var currentMaterial = childCube.GetComponent<Renderer>().material;
-        currentMaterial.SetTexture("_MainTex", isATeam ? albedoTeamA : albedoTeamB);
-        currentMaterial.SetTexture("_EmissionMap", isATeam ? emmisionA : emissionB);
-    }
-
-    public void PullInCamera()
-    {
-        TargetPullInCamera();
-    }
-    public void PullOutCamera()
-    {
-        TargetPullOutCamera();
-    }
-
     public void Shoot(bool hasHitTarget, Vector3 hitPosition)
     {
         totalBulletsLeft--;
         bulletsInMag--;
 
-        GameObject newBullet = Instantiate(bulletPrefab, muzzelTransform.position, muzzelTransform.rotation);
+        GameObject newBullet = Instantiate(bulletPrefab, muzzleTransform.position, muzzleTransform.rotation);
         if(hasHitTarget) newBullet.transform.rotation = Quaternion.LookRotation(hitPosition - newBullet.transform.position);
 
         NetworkServer.Spawn(newBullet);
@@ -86,9 +70,9 @@ public class Pawn : NetworkBehaviour
     {
         int nBulletsCanBeLoaded = Mathf.Min(totalBulletsLeft, bulletsPerMag);
         bulletsInMag = nBulletsCanBeLoaded;
-
         RpcReload();
     }
+
     public void TakeDamage(int amount, Vector3 position, Vector3 normal)
     {
         if (dead) return;
@@ -100,12 +84,13 @@ public class Pawn : NetworkBehaviour
             playerController.NotifyGameManagerOfDeath();
             dead = true;
         }
-
     }
+
     public void RegenHealth()
     {
         health = 100;
     }
+
     public void ResupplyAmmo()
     {
         bulletsInMag = 10;
@@ -120,9 +105,10 @@ public class Pawn : NetworkBehaviour
         {
             gunGfx.transform.localRotation = localRotate;
         });
-        Instantiate(muzzelFlashParticleObject, muzzelTransform.position, muzzelTransform.rotation);
+        Instantiate(muzzelFlashParticleObject, muzzleTransform.position, muzzleTransform.rotation);
         sfxAudioSource.PlayOneShot(shootSound);
     }
+
     [ClientRpc] void RpcReload()
     {
         sfxAudioSource.PlayOneShot(reloadSound);
@@ -134,44 +120,15 @@ public class Pawn : NetworkBehaviour
             gunGfx.transform.localRotation = localRotate;
         });
     }
+
     [ClientRpc] void RpcTakeDamage(Vector3 position, Vector3 normal)
-    {
-    }
-
-    [TargetRpc] void TargetPullInCamera()
-    {
-        Camera.main.transform.SetParent(cameraPos);
-        LeanTween.move(Camera.main.gameObject, cameraPos, 1.0f);
-        LeanTween.rotate(Camera.main.gameObject, transform.rotation.eulerAngles, 1.0f).setOnComplete(() => {
-            Camera.main.transform.localPosition = Vector3.zero;
-            Camera.main.transform.localRotation = Quaternion.identity;
-        });
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        ApplicationManager.Instance().cursorShouldBeLocked = true;
-    }
-    [TargetRpc] void TargetPullOutCamera()
-    {
-        PullOutCameraSelf();
-    }
-
-    void PullOutCameraSelf()
-    {
-        Camera.main.transform.SetParent(null);
-        Transform toXform = GameObject.FindGameObjectWithTag("PulloutCamTransform").transform;
-        LeanTween.move(Camera.main.gameObject, toXform, 1.0f);
-        LeanTween.rotate(Camera.main.gameObject, toXform.eulerAngles, 1.0f);
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        ApplicationManager.Instance().cursorShouldBeLocked = false;
-    }
+    { }
 
     void PlayerHealthUIChanged(int oldValue, int newValue)
     {
         if (currentPlayerStateUIGameObject == null) return;
         currentPlayerStateUIGameObject.GetComponent<PlayerStateUIScript>().SetHealthText(newValue);
+        slider.value = newValue;
     }
     void BulletsInMagChanged(int oldValue, int newValue)
     {
@@ -196,8 +153,6 @@ public class Pawn : NetworkBehaviour
         Instantiate(particleToSpawn, transform.position, transform.rotation);
 
         if (!hasAuthority) return;
-
-        PullOutCameraSelf();
 
         if (currentPlayerStateUIGameObject == null) return;
         Destroy(currentPlayerStateUIGameObject);
