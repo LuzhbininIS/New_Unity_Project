@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using Mirror;
-using Steamworks;
+//using Steamworks;
 
 public class ApplicationManager : MonoBehaviour
 {
@@ -16,10 +16,10 @@ public class ApplicationManager : MonoBehaviour
     public bool cursorShouldBeLocked;
     GameObject currentlyShowingPauseMenu;
 
-    protected Callback<LobbyCreated_t> lobbyCreated;
-    protected Callback<GameLobbyJoinRequested_t> gameLobbyJoinRequested;
-    protected Callback<LobbyEnter_t> lobbyEntered;
-    protected Callback<GameOverlayActivated_t> m_GameOverlayActivated;
+    //protected Callback<LobbyCreated_t> lobbyCreated;
+    //protected Callback<GameLobbyJoinRequested_t> gameLobbyJoinRequested;
+    //protected Callback<LobbyEnter_t> lobbyEntered;
+    //protected Callback<GameOverlayActivated_t> m_GameOverlayActivated;
 
     private const string HostAddressKey = "HostAddress";
 
@@ -41,28 +41,28 @@ public class ApplicationManager : MonoBehaviour
         networkManager.OnClientDisconnectEventFired += NetworkManager_OnClientDisconnectEventFired;
         networkManager.OnClientStoppedEventFired += NetworkManager_OnClientStoppedEventFired;
 
-        if (!SteamManager.Initialized) { return; }
-        string name = SteamFriends.GetPersonaName();
-        Debug.Log(name);
+        //if (!SteamManager.Initialized) { return; }
+        //string name = SteamFriends.GetPersonaName();
+        //Debug.Log(name);
 
-        lobbyCreated = Callback<LobbyCreated_t>.Create(OnLobbyCreated);
-        gameLobbyJoinRequested = Callback<GameLobbyJoinRequested_t>.Create(OnGameLobbyJoinRequested);
-        lobbyEntered = Callback<LobbyEnter_t>.Create(OnLobbyEntered);
+        //lobbyCreated = Callback<LobbyCreated_t>.Create(OnLobbyCreated);
+        //gameLobbyJoinRequested = Callback<GameLobbyJoinRequested_t>.Create(OnGameLobbyJoinRequested);
+        //lobbyEntered = Callback<LobbyEnter_t>.Create(OnLobbyEntered);
 
-        m_GameOverlayActivated = Callback<GameOverlayActivated_t>.Create(OnGameOverlayActivated);
+        //m_GameOverlayActivated = Callback<GameOverlayActivated_t>.Create(OnGameOverlayActivated);
     }
 
-    private void OnGameOverlayActivated(GameOverlayActivated_t pCallback)
-    {
-        if (pCallback.m_bActive != 0)
-        {
-            Debug.Log("Steam Overlay has been activated");
-        }
-        else
-        {
-            Debug.Log("Steam Overlay has been closed");
-        }
-    }
+    //private void OnGameOverlayActivated(GameOverlayActivated_t pCallback)
+    //{
+    //    if (pCallback.m_bActive != 0)
+    //    {
+    //        Debug.Log("Steam Overlay has been activated");
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Steam Overlay has been closed");
+    //    }
+    //}
 
     private void NetworkManager_OnClientStoppedEventFired()
     {
@@ -103,7 +103,7 @@ public class ApplicationManager : MonoBehaviour
     public void HostSteamGame()
     {
 
-        SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, networkManager.maxConnections);
+        //SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, networkManager.maxConnections);
     }
 
     public void QuitApplicationButtonClicked()
@@ -142,46 +142,46 @@ public class ApplicationManager : MonoBehaviour
         }
     }
 
-    private void OnLobbyCreated(LobbyCreated_t callback)
-    {
-        if (callback.m_eResult != EResult.k_EResultOK)
-        {
-            //button.SetActive(true);
-            return;
-        }
+    //private void OnLobbyCreated(LobbyCreated_t callback)
+    //{
+    //    if (callback.m_eResult != EResult.k_EResultOK)
+    //    {
+    //        //button.SetActive(true);
+    //        return;
+    //    }
 
-        isPlaying = true;
-        isHosting = true;
+    //    isPlaying = true;
+    //    isHosting = true;
 
-        networkManager.StartHost();
+    //    networkManager.StartHost();
 
        
-        SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey, SteamUser.GetSteamID().ToString());
-        string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
+    //    SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey, SteamUser.GetSteamID().ToString());
+    //    string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
 
-    }
+    //}
 
-    private void OnGameLobbyJoinRequested(GameLobbyJoinRequested_t callback)
-    {
-        SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
+    //private void OnGameLobbyJoinRequested(GameLobbyJoinRequested_t callback)
+    //{
+    //    SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
 
 
-    }
+    //}
 
-    private void OnLobbyEntered(LobbyEnter_t callback)
-    {
-        if (NetworkServer.active) { return; }
+    //private void OnLobbyEntered(LobbyEnter_t callback)
+    //{
+    //    if (NetworkServer.active) { return; }
 
-        isPlaying = true;
-        isHosting = false;
+    //    isPlaying = true;
+    //    isHosting = false;
 
-        string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
+    //    string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
 
-        networkManager.networkAddress = hostAddress;
+    //    networkManager.networkAddress = hostAddress;
 
-        networkManager.StartClient();
+    //    networkManager.StartClient();
 
-        //button.SetActive(false);
+    //    //button.SetActive(false);
 
-    }
+    //}
 }

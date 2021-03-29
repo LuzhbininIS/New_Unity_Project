@@ -1,0 +1,535 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19042.868; Version 2009; 64bit' Language: 'ru' Physical Memory: 16226 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\Unity Hub\editor\2020.2.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Work/_TRKPO/New_Unity_Project/New Unity Project
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+55021
+Successfully changed project path to: D:/Work/_TRKPO/New_Unity_Project/New Unity Project
+D:/Work/_TRKPO/New_Unity_Project/New Unity Project
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 69.16 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.2f1 (068178b99f32)
+[Subsystems] Discovering subsystems at path D:/Unity Hub/editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Work/_TRKPO/New_Unity_Project/New Unity Project/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 (ID=0x1c20)
+    Vendor:   
+    VRAM:     6052 MB
+    Driver:   27.21.14.6192
+Initialize mono
+Mono path[0] = 'D:/Unity Hub/editor/2020.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity Hub/editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity Hub/editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56288
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity Hub/editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001597 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 65.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.040 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002251 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Find all reader and writers took 105 milliseconds
+Script Module: UnityEngine.UI.dll
+Weave behaviours and messages took70 milliseconds
+Find all reader and writers took 81 milliseconds
+Script Module: UnityEngine.TestRunner.dll
+Weave behaviours and messages took17 milliseconds
+Find all reader and writers took 78 milliseconds
+Script Module: Unity.Mathematics.dll
+Weave behaviours and messages took190 milliseconds
+Find all reader and writers took 98 milliseconds
+Script Module: SimpleWebTransport.dll
+Weave behaviours and messages took5 milliseconds
+Find all reader and writers took 90 milliseconds
+Script Module: Unity.Timeline.dll
+Weave behaviours and messages took23 milliseconds
+Find all reader and writers took 77 milliseconds
+Script Module: Mirror.Examples.dll
+[Projectile] NetworkBehaviourProcessor
+[Projectile] Found NetworkBehaviour Mirror.Examples.Tanks.Projectile
+[Projectile] Process Start
+[Projectile]   GenerateSerialization
+[Projectile]   GenerateDeSerialization
+[Projectile] Process Done
+[Tank] NetworkBehaviourProcessor
+[Tank] Found NetworkBehaviour Mirror.Examples.Tanks.Tank
+[Tank] Process Start
+[Tank]   GenerateConstants 
+[Tank]   GenerateSerialization
+[Tank]   GenerateDeSerialization
+[Tank] Process Done
+[NetworkRoomPlayer] NetworkBehaviourProcessor
+[NetworkRoomPlayer] Found NetworkBehaviour Mirror.NetworkRoomPlayer
+[NetworkRoomPlayer] Process Start
+[NetworkRoomPlayer] Sync Var readyToBegin System.Boolean
+[NetworkRoomPlayer] Sync Var index System.Int32
+[NetworkRoomPlayer]   GenerateConstants 
+[NetworkRoomPlayer]   GenerateSerialization
+[NetworkRoomPlayer]   GenerateDeSerialization
+[NetworkRoomPlayer] Process Done
+[NetworkRoomPlayerExt] NetworkBehaviourProcessor
+[NetworkRoomPlayerExt] Found NetworkBehaviour Mirror.Examples.NetworkRoom.NetworkRoomPlayerExt
+[NetworkRoomPlayerExt] Process Start
+[NetworkRoomPlayerExt]   GenerateSerialization
+[NetworkRoomPlayerExt]   GenerateDeSerialization
+[NetworkRoomPlayerExt] Process Done
+[PlayerController] NetworkBehaviourProcessor
+[PlayerController] Found NetworkBehaviour Mirror.Examples.NetworkRoom.PlayerController
+[PlayerController] Process Start
+[PlayerController]   GenerateSerialization
+[PlayerController]   GenerateDeSerialization
+[PlayerController] Process Done
+[PlayerScore] NetworkBehaviourProcessor
+[PlayerScore] Found NetworkBehaviour Mirror.Examples.NetworkRoom.PlayerScore
+[PlayerScore] Process Start
+[PlayerScore] Sync Var index System.Int32
+[PlayerScore] Sync Var score System.UInt32
+[PlayerScore]   GenerateSerialization
+[PlayerScore]   GenerateDeSerialization
+[PlayerScore] Process Done
+[RandomColor] NetworkBehaviourProcessor
+[RandomColor] Found NetworkBehaviour Mirror.Examples.NetworkRoom.RandomColor
+[RandomColor] Process Start
+[RandomColor] Sync Var color UnityEngine.Color32
+[RandomColor]   GenerateSerialization
+[RandomColor]   GenerateDeSerialization
+[RandomColor] Process Done
+[Reward] NetworkBehaviourProcessor
+[Reward] Found NetworkBehaviour Mirror.Examples.NetworkRoom.Reward
+[Reward] Process Start
+[Reward]   GenerateSerialization
+[Reward]   GenerateDeSerialization
+[Reward] Process Done
+[AddForce] NetworkBehaviourProcessor
+[AddForce] Found NetworkBehaviour Mirror.Examples.RigidbodyPhysics.AddForce
+[AddForce] Process Start
+[AddForce]   GenerateSerialization
+[AddForce]   GenerateDeSerialization
+[AddForce] Process Done
+[Ball] NetworkBehaviourProcessor
+[Ball] Found NetworkBehaviour Mirror.Examples.Pong.Ball
+[Ball] Process Start
+[Ball]   GenerateSerialization
+[Ball]   GenerateDeSerialization
+[Ball] Process Done
+[Player] NetworkBehaviourProcessor
+[Player] Found NetworkBehaviour Mirror.Examples.Pong.Player
+[Player] Process Start
+[Player]   GenerateSerialization
+[Player]   GenerateDeSerialization
+[Player] Process Done
+[MatchController] NetworkBehaviourProcessor
+[MatchController] Found NetworkBehaviour Mirror.Examples.MultipleMatch.MatchController
+[MatchController] Process Start
+[MatchController] Sync Var currentPlayer Mirror.NetworkIdentity
+[MatchController]   GenerateConstants 
+[MatchController]   GenerateSerialization
+[MatchController]   GenerateDeSerialization
+[MatchController] Process Done
+[PhysicsCollision] NetworkBehaviourProcessor
+[PhysicsCollision] Found NetworkBehaviour Mirror.Examples.MultipleAdditiveScenes.PhysicsCollision
+[PhysicsCollision] Process Start
+[PhysicsCollision]   GenerateSerialization
+[PhysicsCollision]   GenerateDeSerialization
+[PhysicsCollision] Process Done
+[PlayerController] NetworkBehaviourProcessor
+[PlayerController] Found NetworkBehaviour Mirror.Examples.MultipleAdditiveScenes.PlayerController
+[PlayerController] Process Start
+[PlayerController]   GenerateSerialization
+[PlayerController]   GenerateDeSerialization
+[PlayerController] Process Done
+[PlayerScore] NetworkBehaviourProcessor
+[PlayerScore] Found NetworkBehaviour Mirror.Examples.MultipleAdditiveScenes.PlayerScore
+[PlayerScore] Process Start
+[PlayerScore] Sync Var playerNumber System.Int32
+[PlayerScore] Sync Var scoreIndex System.Int32
+[PlayerScore] Sync Var matchIndex System.Int32
+[PlayerScore] Sync Var score System.UInt32
+[PlayerScore]   GenerateSerialization
+[PlayerScore]   GenerateDeSerialization
+[PlayerScore] Process Done
+[RandomColor] NetworkBehaviourProcessor
+[RandomColor] Found NetworkBehaviour Mirror.Examples.MultipleAdditiveScenes.RandomColor
+[RandomColor] Process Start
+[RandomColor] Sync Var color UnityEngine.Color32
+[RandomColor]   GenerateSerialization
+[RandomColor]   GenerateDeSerialization
+[RandomColor] Process Done
+[Reward] NetworkBehaviourProcessor
+[Reward] Found NetworkBehaviour Mirror.Examples.MultipleAdditiveScenes.Reward
+[Reward] Process Start
+[Reward]   GenerateSerialization
+[Reward]   GenerateDeSerialization
+[Reward] Process Done
+[Player] NetworkBehaviourProcessor
+[Player] Found NetworkBehaviour Mirror.Examples.Chat.Player
+[Player] Process Start
+[Player] Sync Var playerName System.String
+[Player]   GenerateConstants 
+[Player]   GenerateSerialization
+[Player]   GenerateDeSerialization
+[Player] Process Done
+[MonsterMovement] NetworkBehaviourProcessor
+[MonsterMovement] Found NetworkBehaviour Mirror.Examples.Benchmark.MonsterMovement
+[MonsterMovement] Process Start
+[MonsterMovement]   GenerateSerialization
+[MonsterMovement]   GenerateDeSerialization
+[MonsterMovement] Process Done
+[PlayerMovement] NetworkBehaviourProcessor
+[PlayerMovement] Found NetworkBehaviour Mirror.Examples.Benchmark.PlayerMovement
+[PlayerMovement] Process Start
+[PlayerMovement]   GenerateSerialization
+[PlayerMovement]   GenerateDeSerialization
+[PlayerMovement] Process Done
+[Player] NetworkBehaviourProcessor
+[Player] Found NetworkBehaviour Mirror.Examples.Basic.Player
+[Player] Process Start
+[Player] Sync Var playerNumber System.Int32
+[Player] Sync Var playerData System.Int32
+[Player] Sync Var playerColor UnityEngine.Color32
+[Player]   GenerateSerialization
+[Player]   GenerateDeSerialization
+[Player] Process Done
+[PlayerController] NetworkBehaviourProcessor
+[PlayerController] Found NetworkBehaviour Mirror.Examples.Additive.PlayerController
+[PlayerController] Process Start
+[PlayerController]   GenerateSerialization
+[PlayerController]   GenerateDeSerialization
+[PlayerController] Process Done
+[RandomColor] NetworkBehaviourProcessor
+[RandomColor] Found NetworkBehaviour Mirror.Examples.Additive.RandomColor
+[RandomColor] Process Start
+[RandomColor] Sync Var color UnityEngine.Color32
+[RandomColor]   GenerateSerialization
+[RandomColor]   GenerateDeSerialization
+[RandomColor] Process Done
+[ShootingTankBehaviour] NetworkBehaviourProcessor
+[ShootingTankBehaviour] Found NetworkBehaviour Mirror.Examples.Additive.ShootingTankBehaviour
+[ShootingTankBehaviour] Process Start
+[ShootingTankBehaviour] Sync Var rotation UnityEngine.Quaternion
+[ShootingTankBehaviour]   GenerateSerialization
+[ShootingTankBehaviour]   GenerateDeSerialization
+[ShootingTankBehaviour] Process Done
+Weave behaviours and messages took56 milliseconds
+  ProcessSitesModule Mirror.Examples.dll elapsed time:00:00:00.0097021
+Find all reader and writers took 73 milliseconds
+Script Module: Unity.ProBuilder.dll
+Weave behaviours and messages took43 milliseconds
+Find all reader and writers took 69 milliseconds
+Script Module: Mirror.Components.dll
+[NetworkAnimator] NetworkBehaviourProcessor
+[NetworkAnimator] Found NetworkBehaviour Mirror.NetworkAnimator
+[NetworkAnimator] Process Start
+[NetworkAnimator] Sync Var animatorSpeed System.Single
+[NetworkAnimator]   GenerateConstants 
+[NetworkAnimator]   GenerateSerialization
+[NetworkAnimator]   GenerateDeSerialization
+[NetworkAnimator] Process Done
+[NetworkRoomPlayer] NetworkBehaviourProcessor
+[NetworkRoomPlayer] Found NetworkBehaviour Mirror.NetworkRoomPlayer
+[NetworkRoomPlayer] Process Start
+[NetworkRoomPlayer] Sync Var readyToBegin System.Boolean
+[NetworkRoomPlayer] Sync Var index System.Int32
+[NetworkRoomPlayer]   GenerateConstants 
+[NetworkRoomPlayer]   GenerateSerialization
+[NetworkRoomPlayer]   GenerateDeSerialization
+[NetworkRoomPlayer] Process Done
+[NetworkLobbyPlayer] NetworkBehaviourProcessor
+[NetworkLobbyPlayer] Found NetworkBehaviour Mirror.NetworkLobbyPlayer
+[NetworkLobbyPlayer] Process Start
+[NetworkLobbyPlayer]   GenerateSerialization
+[NetworkLobbyPlayer]   GenerateDeSerialization
+[NetworkLobbyPlayer] Process Done
+[NetworkVisibility] NetworkBehaviourProcessor
+[NetworkVisibility] Found NetworkBehaviour Mirror.NetworkVisibility
+[NetworkVisibility] Process Start
+[NetworkVisibility]   GenerateSerialization
+[NetworkVisibility]   GenerateDeSerialization
+[NetworkVisibility] Process Done
+[NetworkMatchChecker] NetworkBehaviourProcessor
+[NetworkMatchChecker] Found NetworkBehaviour Mirror.NetworkMatchChecker
+[NetworkMatchChecker] Process Start
+[NetworkMatchChecker] Sync Var currentMatchDebug System.String
+[NetworkMatchChecker]   GenerateSerialization
+[NetworkMatchChecker]   GenerateDeSerialization
+[NetworkMatchChecker] Process Done
+[NetworkVisibility] NetworkBehaviourProcessor
+[NetworkProximityChecker] NetworkBehaviourProcessor
+[NetworkProximityChecker] Found NetworkBehaviour Mirror.NetworkProximityChecker
+[NetworkProximityChecker] Process Start
+[NetworkProximityChecker]   GenerateSerialization
+[NetworkProximityChecker]   GenerateDeSerialization
+[NetworkProximityChecker] Process Done
+[NetworkRoomPlayer] NetworkBehaviourProcessor
+[NetworkVisibility] NetworkBehaviourProcessor
+[NetworkSceneChecker] NetworkBehaviourProcessor
+[NetworkSceneChecker] Found NetworkBehaviour Mirror.NetworkSceneChecker
+[NetworkSceneChecker] Process Start
+[NetworkSceneChecker]   GenerateSerialization
+[NetworkSceneChecker]   GenerateDeSerialization
+[NetworkSceneChecker] Process Done
+[NetworkTransformBase] NetworkBehaviourProcessor
+[NetworkTransformBase] Found NetworkBehaviour Mirror.NetworkTransformBase
+[NetworkTransformBase] Process Start
+[NetworkTransformBase]   GenerateConstants 
+[NetworkTransformBase]   GenerateSerialization
+[NetworkTransformBase]   GenerateDeSerialization
+[NetworkTransformBase] Process Done
+[NetworkTransform] NetworkBehaviourProcessor
+[NetworkTransform] Found NetworkBehaviour Mirror.NetworkTransform
+[NetworkTransform] Process Start
+[NetworkTransform]   GenerateSerialization
+[NetworkTransform]   GenerateDeSerialization
+[NetworkTransform] Process Done
+[NetworkTransformBase] NetworkBehaviourProcessor
+[NetworkTransformBase] NetworkBehaviourProcessor
+[NetworkTransformChild] NetworkBehaviourProcessor
+[NetworkTransformChild] Found NetworkBehaviour Mirror.NetworkTransformChild
+[NetworkTransformChild] Process Start
+[NetworkTransformChild]   GenerateSerialization
+[NetworkTransformChild]   GenerateDeSerialization
+[NetworkTransformChild] Process Done
+[NetworkLerpRigidbody] NetworkBehaviourProcessor
+[NetworkLerpRigidbody] Found NetworkBehaviour Mirror.Experimental.NetworkLerpRigidbody
+[NetworkLerpRigidbody] Process Start
+[NetworkLerpRigidbody] Sync Var targetVelocity UnityEngine.Vector3
+[NetworkLerpRigidbody] Sync Var targetPosition UnityEngine.Vector3
+[NetworkLerpRigidbody]   GenerateConstants 
+[NetworkLerpRigidbody]   GenerateSerialization
+[NetworkLerpRigidbody]   GenerateDeSerialization
+[NetworkLerpRigidbody] Process Done
+[NetworkRigidbody] NetworkBehaviourProcessor
+[NetworkRigidbody] Found NetworkBehaviour Mirror.Experimental.NetworkRigidbody
+[NetworkRigidbody] Process Start
+[NetworkRigidbody] Sync Var velocity UnityEngine.Vector3
+[NetworkRigidbody] Sync Var angularVelocity UnityEngine.Vector3
+[NetworkRigidbody] Sync Var isKinematic System.Boolean
+[NetworkRigidbody] Sync Var useGravity System.Boolean
+[NetworkRigidbody] Sync Var drag System.Single
+[NetworkRigidbody] Sync Var angularDrag System.Single
+[NetworkRigidbody]   GenerateConstants 
+[NetworkRigidbody]   GenerateSerialization
+[NetworkRigidbody]   GenerateDeSerialization
+[NetworkRigidbody] Process Done
+[NetworkRigidbody2D] NetworkBehaviourProcessor
+[NetworkRigidbody2D] Found NetworkBehaviour Mirror.Experimental.NetworkRigidbody2D
+[NetworkRigidbody2D] Process Start
+[NetworkRigidbody2D] Sync Var velocity UnityEngine.Vector2
+[NetworkRigidbody2D] Sync Var angularVelocity System.Single
+[NetworkRigidbody2D] Sync Var isKinematic System.Boolean
+[NetworkRigidbody2D] Sync Var gravityScale System.Single
+[NetworkRigidbody2D] Sync Var drag System.Single
+[NetworkRigidbody2D] Sync Var angularDrag System.Single
+[NetworkRigidbody2D]   GenerateConstants 
+[NetworkRigidbody2D]   GenerateSerialization
+[NetworkRigidbody2D]   GenerateDeSerialization
+[NetworkRigidbody2D] Process Done
+[NetworkTransformBase] NetworkBehaviourProcessor
+[NetworkTransformBase] Found NetworkBehaviour Mirror.Experimental.NetworkTransformBase
+[NetworkTransformBase] Process Start
+[NetworkTransformBase] Sync Var clientAuthority System.Boolean
+[NetworkTransformBase] Sync Var excludeOwnerUpdate System.Boolean
+[NetworkTransformBase] Sync Var syncPosition System.Boolean
+[NetworkTransformBase] Sync Var syncRotation System.Boolean
+[NetworkTransformBase] Sync Var syncScale System.Boolean
+[NetworkTransformBase] Sync Var interpolatePosition System.Boolean
+[NetworkTransformBase] Sync Var interpolateRotation System.Boolean
+[NetworkTransformBase] Sync Var interpolateScale System.Boolean
+[NetworkTransformBase] Sync Var localPositionSensitivity System.Single
+[NetworkTransformBase] Sync Var localRotationSensitivity System.Single
+[NetworkTransformBase] Sync Var localScaleSensitivity System.Single
+[NetworkTransformBase]   GenerateConstants 
+[NetworkTransformBase]   GenerateSerialization
+[NetworkTransformBase]   GenerateDeSerialization
+[NetworkTransformBase] Process Done
+[NetworkTransform] NetworkBehaviourProcessor
+[NetworkTransform] Found NetworkBehaviour Mirror.Experimental.NetworkTransform
+[NetworkTransform] Process Start
+[NetworkTransform]   GenerateSerialization
+[NetworkTransform]   GenerateDeSerialization
+[NetworkTransform] Process Done
+[NetworkTransformBase] NetworkBehaviourProcessor
+[NetworkTransformBase] NetworkBehaviourProcessor
+[NetworkTransformChild] NetworkBehaviourProcessor
+[NetworkTransformChild] Found NetworkBehaviour Mirror.Experimental.NetworkTransformChild
+[NetworkTransformChild] Process Start
+[NetworkTransformChild]   GenerateSerialization
+[NetworkTransformChild]   GenerateDeSerialization
+[NetworkTransformChild] Process Done
+Weave behaviours and messages took31 milliseconds
+  ProcessSitesModule Mirror.Components.dll elapsed time:00:00:00.0010442
+Find all reader and writers took 90 milliseconds
+Script Module: Unity.TextMeshPro.dll
+Weave behaviours and messages took65 milliseconds
+Find all reader and writers took 91 milliseconds
+Script Module: Unity.ProBuilder.Poly2Tri.dll
+Weave behaviours and messages took5 milliseconds
+Find all reader and writers took 75 milliseconds
+Script Module: Unity.Postprocessing.Runtime.dll
+Weave behaviours and messages took17 milliseconds
+Find all reader and writers took 76 milliseconds
+Script Module: Unity.InteractiveTutorials.Core.Scripts.dll
+Weave behaviours and messages took1 milliseconds
+Find all reader and writers took 90 milliseconds
+Script Module: Unity.2D.SpriteShape.Runtime.dll
+Weave behaviours and messages took17 milliseconds
+Find all reader and writers took 109 milliseconds
+Script Module: Telepathy.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 83 milliseconds
+Script Module: Mirror.Authenticators.dll
+Weave behaviours and messages took0 milliseconds
+  ProcessSitesModule Mirror.Authenticators.dll elapsed time:00:00:00
+Find all reader and writers took 88 milliseconds
+Script Module: Unity.ProGrids.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 108 milliseconds
+Script Module: Unity.ProBuilder.Csg.dll
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 91 milliseconds
+Script Module: Mirror.Examples.Cloud.GUI.dll
+Weave behaviours and messages took4 milliseconds
+Find all reader and writers took 112 milliseconds
+Script Module: Mirror.Cloud.dll
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 92 milliseconds
+Script Module: Unity.ProBuilder.KdTree.dll
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 78 milliseconds
+Script Module: kcp2k.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 80 milliseconds
+Script Module: Unity.ProBuilder.Stl.dll
+Weave behaviours and messages took1 milliseconds
+Find all reader and writers took 108 milliseconds
+Script Module: Mirror.Examples.Cloud.Pong.dll
+[Ball] NetworkBehaviourProcessor
+[Ball] Found NetworkBehaviour Mirror.Cloud.Examples.Pong.Ball
+[Ball] Process Start
+[Ball]   GenerateSerialization
+[Ball]   GenerateDeSerialization
+[Ball] Process Done
+[BallManager] NetworkBehaviourProcessor
+[BallManager] Found NetworkBehaviour Mirror.Cloud.Examples.Pong.BallManager
+[BallManager] Process Start
+[BallManager]   GenerateSerialization
+[BallManager]   GenerateDeSerialization
+[BallManager] Process Done
+[Player] NetworkBehaviourProcessor
+[Player] Found NetworkBehaviour Mirror.Cloud.Examples.Pong.Player
+[Player] Process Start
+[Player]   GenerateSerialization
+[Player]   GenerateDeSerialization
+[Player] Process Done
+Weave behaviours and messages took2 milliseconds
+  ProcessSitesModule Mirror.Examples.Cloud.Pong.dll elapsed time:00:00:00
+Find all reader and writers took 78 milliseconds
+Script Module: Unity.2D.Common.Runtime.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 73 milliseconds
+Script Module: Unity.InternalAPIEngineBridge.001.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 127 milliseconds
+Script Module: UnityEditor.TestRunner.dll
+Weave behaviours and messages took34 milliseconds
+Find all reader and writers took 124 milliseconds
+Script Module: Unity.InteractiveTutorials.Core.dll
+Weave behaviours and messages took32 milliseconds
+Find all reader and writers took 105 milliseconds
+Script Module: UnityEditor.UI.dll
+Weave behaviours and messages took7 milliseconds
+Find all reader and writers took 125 milliseconds
+Script Module: UnityEditor.InteractiveTutorialsFramework.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 102 milliseconds
+Script Module: Unity.ProBuilder.AssetIdRemapUtility.dll
+Weave behaviours and messages took4 milliseconds
+Find all reader and writers took 105 milliseconds
+Script Module: Mirror.CompilerSymbols.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 102 milliseconds
+Script Module: Unity.InternalAPIEditorBridge.001.dll
+Weave behaviours and messages took0 milliseconds
+Mono: successfully reloaded assembly
+- Completed reload, in 10.103 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.63 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2364 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 195.8 MB.
+System memory in use after: 196.0 MB.
+
+Unloading 84 unused Assets to reduce memory usage. Loaded Objects now: 2815.
+Total: 5.183400 ms (FindLiveObjects: 0.407800 ms CreateObjectMapping: 0.185700 ms MarkObjects: 4.408400 ms  DeleteObjects: 0.180100 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/Managers/SteamLobby.cs
+  artifactKey: Guid(ce730928aad30ad4c8c16c6cefbb18d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/SteamLobby.cs using Guid(ce730928aad30ad4c8c16c6cefbb18d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60967806ec87f8f729d7138a358be9d5') in 0.046034 seconds
+  Import took 0.059451 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.418294 seconds.
+  path: Assets/Scripts/Managers/SteamLobby.cs
+  artifactKey: Guid(ce730928aad30ad4c8c16c6cefbb18d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/SteamLobby.cs using Guid(ce730928aad30ad4c8c16c6cefbb18d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5792c6c45777918713130a8a9d6399f0') in 0.002920 seconds
+  Import took 0.029618 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002170 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.266 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2282 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 191.1 MB.
+System memory in use after: 191.3 MB.
+
+Unloading 80 unused Assets to reduce memory usage. Loaded Objects now: 2818.
+Total: 2.911600 ms (FindLiveObjects: 0.250700 ms CreateObjectMapping: 0.121800 ms MarkObjects: 2.412900 ms  DeleteObjects: 0.124900 ms)
+
