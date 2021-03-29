@@ -19,6 +19,7 @@ public class ApplicationManager : MonoBehaviour
     protected Callback<LobbyCreated_t> lobbyCreated;
     protected Callback<GameLobbyJoinRequested_t> gameLobbyJoinRequested;
     protected Callback<LobbyEnter_t> lobbyEntered;
+    protected Callback<GameOverlayActivated_t> m_GameOverlayActivated;
 
     private const string HostAddressKey = "HostAddress";
 
@@ -41,10 +42,26 @@ public class ApplicationManager : MonoBehaviour
         networkManager.OnClientStoppedEventFired += NetworkManager_OnClientStoppedEventFired;
 
         if (!SteamManager.Initialized) { return; }
+        string name = SteamFriends.GetPersonaName();
+        Debug.Log(name);
 
         lobbyCreated = Callback<LobbyCreated_t>.Create(OnLobbyCreated);
         gameLobbyJoinRequested = Callback<GameLobbyJoinRequested_t>.Create(OnGameLobbyJoinRequested);
         lobbyEntered = Callback<LobbyEnter_t>.Create(OnLobbyEntered);
+
+        m_GameOverlayActivated = Callback<GameOverlayActivated_t>.Create(OnGameOverlayActivated);
+    }
+
+    private void OnGameOverlayActivated(GameOverlayActivated_t pCallback)
+    {
+        if (pCallback.m_bActive != 0)
+        {
+            Debug.Log("Steam Overlay has been activated");
+        }
+        else
+        {
+            Debug.Log("Steam Overlay has been closed");
+        }
     }
 
     private void NetworkManager_OnClientStoppedEventFired()
@@ -85,7 +102,6 @@ public class ApplicationManager : MonoBehaviour
 
     public void HostSteamGame()
     {
-        
 
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, networkManager.maxConnections);
     }
@@ -139,7 +155,9 @@ public class ApplicationManager : MonoBehaviour
 
         networkManager.StartHost();
 
+       
         SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey, SteamUser.GetSteamID().ToString());
+        string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
 
     }
 
